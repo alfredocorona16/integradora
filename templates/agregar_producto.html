@@ -1,0 +1,92 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block head %}
+    {{ super() }}
+    <title>
+        {% block title %}
+            Insertar producto - Tienda Sags
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="../static/css/style.css">
+{% endblock %}
+
+{% block body %}
+    {% block navbar %}
+        {% include 'navbar.html' %}
+    {% endblock %}
+
+    {% block content %}
+        <main class="form">
+            <section class="form_header">
+                <h1>Agregar Nuevo Usuario</h1>
+            </section>
+            <section class="form_body">
+                <form action="{{ url_for('agregar_producto') }}" method="post">
+
+                    <div class="form-group">
+                        <label for="producto">Producto:</label>
+                        <input type="text" name="producto" id="producto" class="form-control" placeholder="producto" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cantidad">Cantidad:</label>
+                        <input type="text" name="cantidad" id="cantidad" class="form-control" placeholder="cantidad" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="categoria" class="form-control-label">Categoría:</label>
+                        <select name="categoria" id="categoria" class="form-control" required>
+                        <option value="">Selecciona una categoria</option>
+                        <option value="frutas_verduras">Frutas y Verduras</option>
+                        <option value="enlatados">Enlatados</option>
+                        <option value="pastas_arroz">Pastas y Arroz</option>
+                        <option value="salsas_condimentos">Salsas y Condimentos</option>
+                        <option value="aceites_grasas">Aceites y Grasas</option>
+                        <option value="snacks">Snacks</option>
+                        <option value="bebidas">Bebidas</option>
+                        <option value="panaderia">Panadería</option>
+                        <option value="cereales_granos">Cereales y Granos</option>
+                        <option value="pan_frio">Pan Frío</option>
+                        <option value="carnes_aves">Carnes y Aves</option>
+                        <option value="productos_congelados">Productos Congelados</option>
+                        <option value="productos_aseo">Productos de Aseo</option>
+                        <option value="cafe_te">Café y Té</option>
+                        <option value="dulces_golosinas">Dulces y Golosinas</option>
+                        <option value="productos_bebes">Productos para Bebés</option>
+                        <option value="pan_tortillas">Pan y Tortillas</option>
+                        <option value="comida_mascotas">Comida para Mascotas</option>
+                        <option value="especias">Especias</option>
+                        <option value="vinos_licores">Vinos y Licores</option>
+                        <option value="lacteos">Lácteos</option>
+                    </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="proveedores">Proveedor:</label>
+                        <input type="text" name="proveedores" id="proveedores" class="form-control" placeholder="proveedores" required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="marca">Marca:</label>
+                        <input type="text" name="marca" id="marca" class="form-control" placeholder="marca" required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="bodega" class="form-control-label">Bodega:</label>
+                        <select name="bodega" id="bodega" class="form-control" required>
+                            <option value="">Selecciona una bodega</option>
+                            <option value="Juan Ponce de León #10"> Juan Ponce de León #10</option>
+                            <option value="San Ignacio, San Juan Primero">San Ignacio, San Juan Primero</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Agregar Usuario</button>
+                    </div>
+                    <div class="form-group">
+                        <a href="{{ url_for('productos') }}" class="btn btn-secondary">Cancelar</a>
+                    </div>
+                </form>
+            </section>
+        </main>
+    {% endblock %}
+{% endblock %}

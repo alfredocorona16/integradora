@@ -1,0 +1,67 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block head %}
+    {{ super() }}
+    <title>
+        {% block title %}
+            Tienda Sags
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="../static/css/style.css">
+{% endblock %}
+
+{% block body %}
+    {% block navbar %}
+        {% include 'navbar.html' %}
+    {% endblock %}
+
+    {% block content %}
+        <main class="table">
+            <section class="table_header">
+                <h1>Usuarios</h1>
+            </section>
+            <section class="table_body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido Paterno</th>
+                            <th scope="col">Apellido Materno</th>
+                            <th scope="col">Puesto</th>
+                            <th scope="col">Correo</th>
+                            <th scope="col">contraseña</th>
+                            <th scope="col">Editar</th>
+                            <th scope="col">Eliminar</th><!-- Nueva columna para acciones -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for fila in datos %}
+                        <tr>
+                            <td>{{ fila[0] }}</td>
+                            <td>{{ fila[1] }}</td>
+                            <td>{{ fila[2] }}</td>
+                            <td>{{ fila[3] }}</td>
+                            <td>{{ fila[4] }}</td>
+                            <td>{{ fila[5] }}</td>
+                            <td>{{ fila[6] }}</td> <!-- Asegúrate de que esta columna sea correcta -->
+                            <td>
+                                <form action="{{ url_for('update1_usuario', id_rol=fila[0]) }}" method="POST">
+                                    <button type="submit" class="btn btn-primary">
+                                        Editar
+                                    </button>
+                                </form>
+                                </td>
+                                <td>
+                                <form action="{{ url_for('delete_usuario', id_rol=fila[0]) }}" method="POST">
+                                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    {% endblock %}
+{% endblock %}

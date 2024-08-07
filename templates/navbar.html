@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../static/css/navbar1.css">
+  <title>SAGS WEB</title>
+</head>
+
+<body class="body-adaptive">
+    <nav>
+        <ul class="sidebar">
+          <li onclick="hideSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+          <li><a href="{{url_for('usuarios')}}">Usuarios</a></li>
+          <li><a href="{{url_for('productos')}}">Productos</a></li>
+          <li><a href="{{url_for('proveedores')}}">Proveedores</a></li>
+          <li><a href="{{url_for('bodega')}}">Bodega</a></li>
+        </ul>
+    </nav>
+    <header>
+      <nav>
+          <div>
+              <a class="border" href="#">SAGS</a>
+              <a class="wave" href="{{url_for('login')}}">SAGS</a>
+          </div>
+          <ul>
+              <li class="hideOnMobile" onclick="showMenu('users')">
+                  <a href="#">Usuarios</a>
+                  <ul class="users hidden">
+                      <li><a href="{{url_for('usuarios')}}">Usuarios</a></li>
+                      <li><a href="editar_usuario.html">Buscar</a></li>
+                      <li><a href="{{url_for('agregar_usuario')}}">Agregar</a></li>
+                  </ul>
+              </li>
+  
+              <li class="hideOnMobile" onclick="showMenu('productos')">
+                  <a href="#">Productos</a>
+                  <ul class="productos hidden">
+                      <li><a href="{{url_for('productos')}}">Productos</a></li>
+                      <li><a href="editar_producto.html">Buscar</a></li>
+                      <li><a href="{{url_for('agregar_producto')}}">Agregar</a></li>
+                  </ul>
+              </li>
+  
+              <li class="hideOnMobile" onclick="showMenu('proveedores')">
+                  <a href="#">Proveedores</a>
+                  <ul class="proveedores hidden">
+                      <li><a href="{{url_for('proveedores')}}">Proveedores</a></li>
+                      <li><a href="editar_proveedor.html">Buscar</a></li>
+                      <li><a href="editar_proveedor.html">Agregar</a></li>
+                  </ul>
+              </li>
+  
+              <li class="hideOnMobile" onclick="showMenu('bodega')">
+                  <a href="#">Bodega</a>
+                  <ul class="bodega hidden">
+                      <li><a href="{{url_for('bodega')}}">Bodega</a></li>
+                      <li><a href="editar_bodega.html">Buscar</a></li>
+                      <li><a href="editar_bodega.html">Agregar</a></li>
+                  </ul>
+              </li>
+  
+              <li onclick="showSidebar()">
+                  <a href="#">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
+                          <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+                      </svg>
+                  </a>
+              </li>
+          </ul>
+      </nav>
+  </header>
+  <main></main>
+<footer>
+  <p>&copy; 2024 Vram Corporation. Todos los derechos reservados.</p>
+</footer>
+  
+    <script src="../static/js/script.js"></script>
+</body>
+</html>

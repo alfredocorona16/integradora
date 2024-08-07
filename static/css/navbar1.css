@@ -1,0 +1,238 @@
+/* Estilos generales reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos para el fondo del body */
+body {
+    background-image: url(../Styles/sags_fondo.jpg);
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display:block;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilos para el nav principal */
+header nav {
+    position: fixed;
+    z-index: 999;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    background-color: white;
+    height: 60px;
+    width: 100%;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    float: right;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li {
+    margin-right: 20px;
+    font-size: 20px;
+    line-height: 60px;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    padding: 0 10px;
+} 
+
+nav h1 {
+    color: white;
+    font-size: 45px;
+}
+
+nav a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Estilos para la barra lateral */
+.sidebar {
+    z-index: 1000;
+    position: fixed;
+    display:flex;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    backdrop-filter: blur(10px);
+    background-color:#fff5 ;
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none; /* Mostrar solo cuando sea necesario */
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.hidden {
+    display: none;
+}
+
+.users {
+    position: absolute;
+    top: 100%; /* Ajusta según la necesidad para posicionar el menú desplegable justo debajo del elemento */
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.productos {
+    position: absolute;
+    top: 100%; /* Ajusta según la necesidad */
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.proveedores {
+    position: absolute;
+    top: 100%; /* Ajusta según la necesidad */
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.bodega {
+    position: absolute;
+    top: 100%; /* Ajusta según la necesidad */
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.users li:hover {
+    background-color: white;
+}
+
+nav ul li:hover .users,
+nav ul li:hover .productos,
+nav ul li:hover .proveedores,
+nav ul li:hover .bodega {
+    display: flex; /* Muestra el menú cuando el elemento está en hover */
+}
+
+.users li a,
+.productos li a,
+.proveedores li a,
+.bodega li a {
+    display: block;
+    color: black;
+    padding: 10px 20px;
+}
+
+nav a:hover {
+    background-color: #f0f0f0;
+    text-decoration: none;
+    height: 60px;
+}
+
+header nav div a {
+    font-size: 50px;
+    justify-content: center;
+    position: absolute;
+}
+
+.sidebar a:hover {
+    background-color: #f0f0f0;
+}
+
+.sidebar li {
+    width: 100%;
+    margin: 0;
+}
+
+.sidebar a {
+    color: black;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+.sidebar a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Estilos para animación de texto SAGS */
+.wave {
+    color: rgb(240, 27, 15);
+    animation: wave 3s ease-in-out infinite;
+}
+
+.border {
+    color: white;
+    text-shadow: -1px -1px 0 black,
+    1px -1px 0 black,
+    1px 1px 0 black,
+    -1px 1px 0 black;
+}
+
+@keyframes wave {
+    0%, 100% {
+        clip-path: polygon(
+            0% 47%,
+            10% 48%,
+            33% 54%,
+            54% 60%,
+            70% 61%,
+            84% 59%,
+            100% 52%,
+            100% 100%,
+            0% 100%
+        );
+    }
+
+    50% {
+        clip-path: polygon(
+            0% 60%,
+            15% 65%,
+            34% 66%,
+            51% 63%,
+            67% 50%,
+            84% 45%,
+            100% 45%,
+            100% 100%,
+            0% 100%
+        );
+    }
+}
+
+@media (max-width: 800px) {
+    .hideOnMobile {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .body-adaptive .menu-second {
+        min-height: 48px;
+    }
+}
+
+footer {
+    background-color: #f1f1f1; 
+    color: #333; 
+    text-align: center; 
+    padding: 10px 0; 
+    position: fixed;
+    bottom: 0;
+    width: 100%; 
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0; 
+}

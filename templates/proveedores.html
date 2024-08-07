@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    {{ super() }}
+    <title>
+        {% block title %}
+            Products
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <!-- <link rel="stylesheet" href=""> // aquí puedes conectar tu hoja de estilo -->
+{% endblock %}
+
+{% block body %}
+    {% block navbar %}
+        {% include 'navbar.html' %}
+    {% endblock %}
+
+{% block content %}
+<main class="table">
+    <section class="table_header">
+        <h1>Usuarios</h1>
+    </section>
+    <section class="table_body">
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Proveedores</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Empresa</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Eliminar</th><!-- Nueva columna para acciones -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for fila in datos %}
+                <tr>
+                    <td>{{ fila[0] }}</td>
+                    <td>{{ fila[1] }}</td>
+                    <td>{{ fila[2] }}</td>
+                    <td>{{ fila[3] }}</td> <!-- Asegúrate de que esta columna sea correcta -->
+                    <td>
+                        <form action="{{ url_for('update1_proveedores', id_proveedor=fila[0]) }}" method="POST">
+                            <button type="submit" class="btn btn-primary">
+                                Editar
+                            </button>
+                        </form>
+                        </td>
+                        <td>
+                        <form action="{{ url_for('delete_proveedores',id_proveedor=fila[0]) }}" method="POST">
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+        {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</main>
+{% endblock %}
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'bootstrap/admin2.html' %}
+
+{% block head %}
+    {{ super() }}
+    <title>
+        {% block title %}
+            ADMIN2
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Style/style.css') }}">
+    <!-- <link rel="stylesheet" href=""> // aqui puedo conectar mi hoja de estilo -->
+{% endblock %}
+
+{% block body %}
+    {% block navbar %}
+        {% include 'navbar.html' %}
+    {% endblock %}
+
+    {% block content %}
+    <div class="container-md">
+        <!-- <img src="{{ url_for('static', filename='Styles/sags.png') }}" alt="libro de biblioteca" height="500px"> -->
+    </div>
+    {% endblock %}
+{% endblock %}

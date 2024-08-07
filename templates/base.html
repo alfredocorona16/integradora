@@ -1,0 +1,22 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block head %}
+    {{ super() }}
+    <title>
+        {% block title %}
+            Tienda SAGS
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="../static/css/navbar.css">
+    <!-- <link rel="stylesheet" href=""> // aquí puedo conectar mi hoja de estilo -->
+{% endblock %}
+
+{% block body %}
+        {% block navbar %}
+            {% include 'navbar.html' %}
+        {% endblock %}
+
+        {% block content %}
+        {% endblock %}
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'bootstrap/base.html' %}
+{% block head %}
+    {{ super() }}
+    <title>
+        {% block title %} 
+            tienda Sags - Editar bodega
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="../static/Style/style.css">
+{% endblock %}
+
+{% block body %}
+
+    {% block navbar %}
+        {% include 'navbar.html' %}
+    {% endblock %}
+
+    {% block content %}
+        <div class="container-fluid">
+            <h2>Edición de Bodega</h2>
+            <br>
+            {% for fila in datos %}
+            <form action="{{ url_for('update2_bodega',id_bodega=fila[0])}}" method="post">
+                <input type="hidden" name="id" value="{{ datos[0] }}">
+
+                <div class="form-group">
+                    <label for="bodega">Bodega:</label>
+                    <input type="text" name="bodega" id="bodega" class="form-control" value="{{ fila[1] }}" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ubicacion">Ubicación:</label>
+                    <input type="text" name="ubicacion" id="ubicacion" class="form-control" value="{{ fila[2] }}" required>
+                </div>
+
+                <br>
+                <button type="submit" class="btn btn-primary">Actualizar</button>
+                <a href="{{ url_for('bodega') }}" class="btn btn-secondary">Cancelar</a>
+            </form>
+            {% endfor %}
+        </div>
+    {% endblock %}
+{% endblock %}

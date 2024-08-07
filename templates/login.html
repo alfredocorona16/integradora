@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="caja">
+
+        <form class="form-control" action="acceso-login" method="post">
+            <div class="input-box">
+              <h1>Login</h1>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="txtcorreo">
+              <small id="emailHelp" class="form-text text-muted"></small>
+              <box-icon type='solid' name='user'></box-icon>
+            </div>
+            <div class="input-box">
+              <label for="exampleInputPassword1"></label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="txtPassword">
+              <box-icon name='lock-alt'></box-icon>
+            </div>
+            <div class="remember-forgot">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">¿Olvidaste tu contraseña?</label>
+            </div>
+            <button type="submit" class="btn">Ingresar</button>
+          </form>
+
+    </div>
+</body>
+</html>
